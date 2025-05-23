@@ -1,0 +1,231 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;700&display=swap" rel="stylesheet" />
+  <title>Sean Barbieri Portfolio</title>
+  <link rel="stylesheet" href="style.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css" integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+</head>
+<body>
+  <div class="gradient-bg">
+    <div class="cd-bg"></div>
+    <div class="gradients-container">
+      <div class="g"></div>
+      <div class="g g2"></div>
+      <div class="g g3"></div>
+      <div class="interactive"></div>
+    </div>
+  </div>
+
+  <header>
+    <h2>Sean.</h2>
+    <nav>
+      <a href="#typing">Home</a>
+      <a href="#projects">Portfolio</a>
+    </nav>
+  </header>
+
+  <section id="typing">
+  <div class="container">
+    <h1><span class="autotype"></span></h1>
+    <a href="#projects" class="down-arrow">
+      <i class="fa-solid fa-arrow-down"></i>
+    </a>
+  </div>
+</section>
+
+  <script src="https://unpkg.com/typed.js@2.1.0/dist/typed.umd.js"></script>
+  <script>
+    var typed = new Typed(".autotype", {
+      strings: [
+        "Hi, I'm Sean Barbieri",
+        "I'm a Mechanical Engineer at UC Berkeley",
+        "Let's work together! 🛠"
+      ],
+      typeSpeed: 50,
+      backSpeed: 50,
+      backDelay: 500,
+      loop: false
+    });
+  </script>
+  
+<section id="projects">
+  <div class="container">
+    <h2>Projects</h2>
+    <div class="projects-grid">
+      
+<div class="project-item">
+  <div class="project-left">
+    <h3>D.U.C.K - A IoT System</h3>
+    <p class="shift-left">Developed a 3-device system using ESP32 microcontrollers and ESP-Now to monitor user presence and phone use in real time. Unlike passive tools, D.U.C.K alerts a third party to encourage focus and habit-building. Designed for low-latency, offline communication without WiFi.</p>
+
+    <p class="shift-right"><strong>BUCK:</strong> Desk unit with a mmWave sensor for presence detection and a servo-based visual timer. Unlike passive monitoring tools, D.U.C.K actively sends alerts via ESP-Now to a third party to promote better study habits. It is housed in a duck enclosure for branding sake.</p>
+
+    <p class="shift-left"><strong>PUCK:</strong> A remote phone-monitoring device that uses a load cell with an HX711 amplifier module to detect phone presence. Sends distraction data to Monitor in real time with custom weight threshold logic.</p>
+
+    <p class="shift-right"><strong>MONITOR:</strong> Handheld device for a third-party accountability partner. Receives alerts via ESP-Now and notifies users with LEDs and a buzzer. Designed for portability and quick response without internet dependency.</p>
+  </div>
+  <div class="project-right">
+    <img src="../assets/Duck.png" alt="D.U.C.K project image" style="width: 100%; margin-bottom: 1rem;" />
+    <iframe width="560" height="315" src="https://www.youtube.com/embed/8V55S-mOoqE?si=Ap0H7AHzRB4nfJvE" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+  </div>
+  <div class="project-images-row">
+  <img src="../assets/buck.png" alt="BUCK device" />
+  <img src="../assets/bbuck.png" alt="BUCK device" />
+  <img src="../assets/puck.png" alt="PUCK device" />
+  <img src="../assets/ppuck.png" alt="BUCK device" />
+  <img src="../assets/monitor.png" alt="MONITOR device" />
+  <img src="../assets/mmon.png" alt="BUCK device" />
+</div>
+</div>
+
+
+<div class="project-item">
+  <div class="project-left">
+    <h3>Goose Works - Automatic Grabber</h3>
+    <p class="shift-left" style="line-height: 2.5;">
+      GooseGrabber is an electronically powered assistive gripper prototype designed to aid users with limited grip strength or hand aches. It features an extending arm driven by a stepper motor that increases the wingspan by approximately one foot, enabling extended reach.
+    </p>
+    <p class="shift-left" style="line-height: 2.5;">
+      The gripper fingers are actuated by servo motors, providing precise control for handling various objects. Structural parts are 3D printed in PLA for rapid prototyping, while high-stress components like pins and the gripper base use laser cut plywood for enhanced strength and durability. Flexible TPU parts serve as motor mounts and rod housings, absorbing bending stresses and motor vibrations to improve longevity. 
+    </p>
+    <p class="shift-left" style="line-height: 2.5;">
+      Mechanical assemblies incorporate ANSI-standard fits, including interference fits for load-bearing joints, clearance fits for screw passages, and snap fits for removable electronic covers, all designed to accommodate typical FDM tolerances of ±0.2-0.3 mm.
+    </p>
+  </div>
+
+  <div class="project-right">
+    <img src="../assets/render.png" alt="GooseWorks project image" style="width: 100%; margin-bottom: 1rem;" />
+
+    <div class="image-carousel">
+      <button class="carousel-btn prev">&#10094;</button>
+      <div class="carousel-window">
+        <div class="carousel-track">
+          <img src="../assets/d1.png" />
+          <img src="../assets/d2.png" />
+          <img src="../assets/d3.png" />
+          <img src="../assets/d7.png" />
+          <img src="../assets/d5.png" />
+          <img src="../assets/d4.png" />
+          <img src="../assets/d6.png" />
+        </div>
+      </div>
+      <button class="carousel-btn next">&#10095;</button>
+    </div>
+  </div>
+
+  <div class="project-images-row">
+    <img src="../assets/gifhand.gif" alt="Gripper animation" style="width: auto; height: 300px; margin-top: 1rem;" />
+    <img src="../assets/whole.png" style="height: 300px; width: auto" />
+    <img src="../assets/closeup.png" style="height: 300px; width: auto"/>
+    <img src="../assets/Goosegrabber.png" style="height: 300px; width: auto"/>
+  </div>
+</div>
+
+
+
+      <div class="project-item">
+        <div class="project-left" style="line-height: 4;">
+          <h3 class="project-left" style="line-height: 2">CalSol - Occupant Cell</h3>
+          <p>Using Ansys, I performed FEA structural simulations on the occupant cell to improve its safety performance. The original design given to me had a factor of safety (FoS) of only 0.4 😱, indicating significant risk under crash loads of 50 kN. Through iterative design optimization, including more detailed composite modeling with Ansys ACP, FoS increased to 1.14, ensuring the structure could withstand predicted impact forces during an accident.</p> 
+          <p>To achieve this outside of sims, I helped design and manufacture lightweight crash structures weighing approximately 20 lbs in total to balance strength and mass efficiency. Load-bearing elements, such as ribs and U-channels, were made from aluminum 6061-T6 for its high yield strength, while resin was used in structural zones to absorb impact forces and redirect loads away from the occupant cell seen here. →</p> 
+        </div>
+        <div class="project-right">
+          <img src="../assets/sims.png" alt="CalSol Occupant Cell image" />
+          <img src="../assets/replace.png" alt="CalSol Occupant Cell image" style="max-width: 300px; width: 100%; display: block; margin: 0 auto;" />
+        </div>
+        <div class="project-images-row">
+          <img src="../assets/deformation.png"/>
+          <img src="../assets/solidworks.png"/>
+          <img src="../assets/FoS.png"/>
+        </div>
+      </div>
+
+<div class="project-item" style="display: flex; gap: 2rem; margin-bottom: 4rem;">
+  <div class="project-left" style="flex: 1; line-height: 4;">
+    <h3 class="project-left" style="line-height: 2">Pomochromo - A Chrome Extension</h3>
+    <p>Collaborated on the full-stack development of a Chrome extension designed to reduce procrastination for high school students using the Pomodoro technique. The extension manages timed work and break intervals to improve focus and productivity.</p>
+    <p>Led back-end development, integrating Chrome.storage API to implement persistent client-side data storage that efficiently manages user preferences and session states without relying on external backend services. Supported front-end development using JavaScript to build a responsive and intuitive user interface that enables seamless session control and real-time feedback.</p>
+    <a href="https://chromewebstore.google.com/detail/pomochromo/bpahdcfodjoodekdgidhhpodoghnllff?hl=en-US" target="_blank" style="font-size: 1rem; color: white;">
+      View Pomochromo on Chrome Web Store
+    </a>
+  </div>
+
+  <div class="project-right" style="flex: 1;">
+    <div style="display: flex; gap: 1rem; flex-wrap: wrap; margin-bottom: 1rem;">
+      <img src="../assets/homepage.png" alt="Pomochromo project image" style="width: 48%; height: auto;" />
+      <img src="../assets/focus timer.png" alt="Pomochromo project image" style="width: 48%; height: auto;" />
+    </div>
+    <img src="../assets/website blocker.png" alt="Website Blocker Screenshot" style="width: 90%; max-width: 100%; height: auto; display: block; margin: 0 auto;" />
+  </div>
+</div>
+
+      <div class="project-item">
+        <div class="project-left">
+          <h3>TBA - CD Player</h3>
+          <p> CD player designed from scratch with hopefully using own pcb design and wood. Will do this summer?</p>
+        </div>
+        <div class="project-right">
+          <img src="../assets/project3.jpg" alt="CD Player project image" />
+        </div>
+      </div>
+
+      <div class="project-item">
+        <div class="project-left">
+          <h3>Smaller Projects + For Fun</h3>
+          <p>automatic light switch + automatic trash sorter+ afx + wind turbine? idk</p>
+        </div>
+        <div class="project-right">
+          <img src="../assets/add.png" alt = "add later"/>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+
+<script>
+  document.querySelectorAll('.image-carousel').forEach(carousel => {
+    const track = carousel.querySelector('.carousel-track');
+    const slides = carousel.querySelectorAll('img');
+    const prev = carousel.querySelector('.carousel-btn.prev');
+    const next = carousel.querySelector('.carousel-btn.next');
+    let index = 0;
+
+    function updateCarousel() {
+      const slideWidth = slides[0].clientWidth;
+      track.style.transform = `translateX(-${index * slideWidth}px)`;
+    }
+
+    next.addEventListener('click', () => {
+      index = (index + 1) % slides.length;
+      updateCarousel();
+    });
+
+    prev.addEventListener('click', () => {
+      index = (index - 1 + slides.length) % slides.length;
+      updateCarousel();
+    });
+
+    window.addEventListener('resize', updateCarousel);
+    updateCarousel();
+  });
+</script>
+
+<footer class="contact-bar">
+  <nav>
+    <a href="mailto:seantiny@berkeley.edu" aria-label="Email seantiny@berkeley.edu">
+      <i class="fa-solid fa-envelope"></i> seantiny@berkeley.edu
+    </a>
+    <a href="https://www.linkedin.com/in/sean-barbieri" target="_blank" rel="noopener" aria-label="LinkedIn Profile">
+      <i class="fa-brands fa-linkedin"></i> LinkedIn
+    </a>
+    <a href="../../assets/resume.pdf" download aria-label="Resume">
+      <i class="fa-solid fa-file"></i> Resume
+    </a>
+  </nav>
+</footer>
