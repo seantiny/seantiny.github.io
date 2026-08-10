@@ -1,0 +1,177 @@
+
+:root {
+    --paper:       #FAFAF8;
+  --paper-dim:    #F1EFE9;
+  --ink:          #111111;
+  --ink-soft:     #3A3A38;
+  --navy:         #0B1F3A;
+  --navy-soft:    #16335C;
+  --steel:        #4A6FA5;
+  --warm-gray:    #8C8577;
+  --beige:        #EDE8DE;
+  --line:         rgba(17,17,17,0.12);
+  --line-strong:  rgba(17,17,17,0.28);
+  --line-on-navy: rgba(250,250,248,0.18);
+
+    --font-display: 'Space Grotesk', 'Neue Montreal', sans-serif;
+  --font-body:    'Inter', sans-serif;
+  --font-mono:    'JetBrains Mono', 'Space Mono', monospace;
+
+    --step--1: clamp(0.78rem, 0.75rem + 0.15vw, 0.86rem);
+  --step-0:  clamp(1rem, 0.95rem + 0.2vw, 1.08rem);
+  --step-1:  clamp(1.25rem, 1.15rem + 0.4vw, 1.5rem);
+  --step-2:  clamp(1.75rem, 1.5rem + 1vw, 2.4rem);
+  --step-3:  clamp(2.4rem, 1.9rem + 2vw, 3.6rem);
+  --step-4:  clamp(3.2rem, 2.2rem + 4vw, 5.6rem);
+  --step-5:  clamp(4rem, 2.4rem + 7vw, 8.5rem);
+
+    --gutter: clamp(1.25rem, 1rem + 2vw, 3rem);
+  --max-w: 1440px;
+  --dur-fast: 220ms;
+  --dur-med: 480ms;
+  --dur-slow: 900ms;
+  --ease: cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+* { box-sizing: border-box; }
+html { scroll-behavior: smooth; }
+
+@media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto; }
+  *, *::before, *::after {
+    animation-duration: 0.001ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.001ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+
+body {
+  margin: 0;
+  background: var(--paper);
+  color: var(--ink);
+  font-family: var(--font-body);
+  font-size: var(--step-0);
+  line-height: 1.55;
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
+}
+
+h1, h2, h3, h4 {
+  font-family: var(--font-display);
+  font-weight: 500;
+  line-height: 1.02;
+  letter-spacing: -0.02em;
+  margin: 0;
+}
+
+p { margin: 0; }
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+img { max-width: 100%; display: block; }
+
+button { font-family: inherit; }
+
+.eyebrow {
+  font-family: var(--font-mono);
+  font-size: var(--step--1);
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--warm-gray);
+}
+
+.container {
+  max-width: var(--max-w);
+  margin: 0 auto;
+  padding: 0 var(--gutter);
+}
+
+.visually-hidden {
+  position: absolute;
+  width: 1px; height: 1px;
+  overflow: hidden;
+  clip: rect(0,0,0,0);
+  white-space: nowrap;
+}
+
+:focus-visible {
+  outline: 2px solid var(--steel);
+  outline-offset: 3px;
+}
+
+hr.rule {
+  border: none;
+  border-top: 1px solid var(--line);
+  margin: 0;
+}
+
+.reveal {
+  opacity: 0;
+  transform: translateY(28px);
+  transition: opacity var(--dur-slow) var(--ease), transform var(--dur-slow) var(--ease);
+}
+.reveal.is-visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+.reveal-delay-1 { transition-delay: 90ms; }
+.reveal-delay-2 { transition-delay: 180ms; }
+.reveal-delay-3 { transition-delay: 270ms; }
+
+.media-frame {
+  position: relative;
+  overflow: hidden;
+  background: var(--item-bg, var(--navy));
+  aspect-ratio: var(--ratio, 4/3);
+}
+.media-frame img {
+  width: 100%; height: 100%;
+  object-fit: var(--thumb-fit, cover);
+  transition: transform var(--dur-med) var(--ease);
+}
+.media-frame.is-missing img { display: none; }
+.media-frame .frame-fallback {
+  display: none;
+  position: absolute; inset: 0;
+  background:
+    linear-gradient(var(--line-on-navy) 1px, transparent 1px) 0 0/32px 32px,
+    linear-gradient(90deg, var(--line-on-navy) 1px, transparent 1px) 0 0/32px 32px,
+    var(--navy);
+  color: rgba(250,250,248,0.55);
+}
+.media-frame.is-missing .frame-fallback { display: block; }
+.frame-fallback .crosshair {
+  position: absolute;
+  width: 22px; height: 22px;
+  top: 50%; left: 50%;
+  transform: translate(-50%, -50%);
+}
+.frame-fallback .crosshair::before,
+.frame-fallback .crosshair::after {
+  content: '';
+  position: absolute;
+  background: rgba(250,250,248,0.4);
+}
+.frame-fallback .crosshair::before { width: 100%; height: 1px; top: 50%; left: 0; }
+.frame-fallback .crosshair::after { height: 100%; width: 1px; left: 50%; top: 0; }
+.frame-fallback .frame-label {
+  position: absolute;
+  bottom: 14px; left: 14px;
+  font-family: var(--font-mono);
+  font-size: 0.68rem;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+}
+.frame-fallback .frame-coord {
+  position: absolute;
+  top: 14px; right: 14px;
+  font-family: var(--font-mono);
+  font-size: 0.65rem;
+  letter-spacing: 0.04em;
+  opacity: 0.7;
+}
+.media-frame:hover img { transform: scale(1.045); }

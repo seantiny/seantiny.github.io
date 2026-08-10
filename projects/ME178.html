@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Flight Cost Analysis — Sean Barbieri</title>
+<meta name="description" content="A machine learning model built to predict flight prices and identify the factors that influence ticket costs, using a dataset of over 300,000 flight records.">
+<link rel="icon" type="image/png" href="../il_fullxfull.7788448561_krkg-removebg-preview.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600&family=Inter:wght@400;500&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../css/base.css">
+<link rel="stylesheet" href="../css/components.css">
+<link rel="stylesheet" href="../css/project-detail.css">
+</head>
+<body>
+
+<nav class="site-nav" aria-label="Primary">
+  <a href="../index.html" class="nav-mark">Sean.</a>
+  <button class="nav-toggle" aria-label="Toggle menu" aria-expanded="false"><span></span></button>
+  <ul class="nav-links">
+    <li><a href="../index.html">Home</a></li>
+    <li><a href="../projects.html" aria-current="page">Projects</a></li>
+    <li><a href="../industry.html">Industry</a></li>
+    <li><a href="../about.html">About</a></li>
+    <li><a href="../contact.html">Contact</a></li>
+  </ul>
+</nav>
+
+<header class="proj-hero">
+  <div class="media-frame" style="--ratio:16/9;">
+    <img src="../images/projects/178/Screenshot 2026-08-03 at 16-47-40 Report - Google Docs.png" alt="Flight price prediction model results">
+    <div class="frame-fallback"><div class="crosshair"></div><span class="frame-label">FIG.00 / 178 / hero</span><span class="frame-coord">2024</span></div>
+  </div>
+  <div class="item-overlay"></div>
+  <div class="proj-hero-body">
+    <span class="eyebrow">ME178 — Research</span>
+    <h1>Flight Cost Analysis using ML</h1>
+  </div>
+</header>
+
+<section class="proj-meta-bar">
+  <div class="meta-block"><span class="eyebrow">Organization</span><p>UC Berkeley — ME178</p></div>
+  <div class="meta-block"><span class="eyebrow">Role</span><p>Researcher</p></div>
+  <div class="meta-block"><span class="eyebrow">Timeline</span><p>2024</p></div>
+  <div class="meta-block"><span class="eyebrow">Software</span><p>Python, scikit-learn</p></div>
+  <div class="meta-block"><span class="eyebrow">Skills</span><p>Machine Learning, Regression, Data Cleaning</p></div>
+</section>
+
+<section class="proj-section">
+  <div class="proj-section-head">
+    <span class="proj-section-num">01</span>
+    <h2>Overview</h2>
+  </div>
+  <div class="proj-section-body">
+    <p>We developed a machine learning model to predict flight prices and identify factors that influence ticket costs. Using a dataset of over 300,000 flight records, we processed flight information including airline, class, number of stops, duration, and days before departure.</p>
+    <p>We compared several machine learning approaches, including LASSO regression, Random Forests, and neural networks. The dataset was cleaned, numerical features were scaled, and categorical variables were one-hot encoded before training the models. We tested different model parameters and compared their performance using R².</p>
+  </div>
+</section>
+
+<section class="proj-section">
+  <div class="proj-section-head">
+    <span class="proj-section-num">03</span>
+    <h2>Results</h2>
+  </div>
+  <div class="proj-section-body">
+    <p>The best LASSO model achieved an R² of 0.9080, while the best neural network reached 0.9478. Our best-performing model was a Random Forest with 60 estimators and a maximum depth of 12, achieving an R² of 0.9554. The results showed that nonlinear models were better able to capture the relationships between flight characteristics and ticket prices.</p>
+  </div>
+</section>
+
+<section class="proj-section">
+  <div class="proj-section-head">
+    <span class="proj-section-num">04</span>
+    <h2>Images</h2>
+  </div>
+  <div class="proj-section-body">
+    <div class="image-mosaic">
+      <figure data-lightbox>
+        <div class="media-frame">
+          <img src="../images/projects/178/Screenshot 2026-08-09 153751.png" alt="Model R-squared comparison chart">
+          <div class="frame-fallback"><div class="crosshair"></div><span class="frame-label">FIG.02</span><span class="frame-coord">04.A</span></div>
+        </div>
+      </figure>
+      <figure data-lightbox>
+        <div class="media-frame">
+          <img src="../images/projects/178/Screenshot 2026-08-09 153807.png" alt="Feature importance from the Random Forest model">
+          <div class="frame-fallback"><div class="crosshair"></div><span class="frame-label">FIG.03</span><span class="frame-coord">04.B</span></div>
+        </div>
+      </figure>
+      <figure data-lightbox>
+        <div class="media-frame">
+          <img src="../images/projects/178/Screenshot 2026-08-09 at 15-37-34 Report - Google Docs.png" alt="Predicted vs. actual flight price scatter plot">
+          <div class="frame-fallback"><div class="crosshair"></div><span class="frame-label">FIG.04</span><span class="frame-coord">04.C</span></div>
+        </div>
+      </figure>
+      <figure data-lightbox>
+        <div class="media-frame">
+          <img src="../images/projects/178/Screenshot 2026-08-09 at 15-37-43 Report - Google Docs.png" alt="Predicted vs. actual flight price scatter plot">
+          <div class="frame-fallback"><div class="crosshair"></div><span class="frame-label">FIG.04</span><span class="frame-coord">04.C</span></div>
+        </div>
+      </figure>
+    </div>
+  </div>
+</section>
+
+<nav class="proj-nextprev" aria-label="More projects">
+  <a class="np-link prev" href="180.html">
+    <span class="eyebrow">Previous</span>
+    <h3>Engineering Analysis Using the Finite Element Method</h3>
+  </a>
+  <a class="np-link next" href="127.html">
+    <span class="eyebrow">Next</span>
+    <h3>Composite Toed Shoe</h3>
+  </a>
+</nav>
+
+<footer class="site-footer">
+  <div class="footer-grid">
+    <div><p class="footer-title">Let's build something!</p></div>
+    <div>
+      <div class="footer-col-heading">Site</div>
+      <ul class="footer-links">
+        <li><a href="../index.html">Home</a></li>
+        <li><a href="../projects.html">Projects</a></li>
+        <li><a href="../industry.html">Industry</a></li>
+        <li><a href="../about.html">About</a></li>
+      </ul>
+    </div>
+    <div>
+      <div class="footer-col-heading">Contact</div>
+      <ul class="footer-links">
+        <li><a href="../contact.html">Contact form</a></li>
+        <li><a href="mailto:seantiny@berkeley.edu">seantiny@berkeley.edu</a></li>
+        <li><a href="https://www.linkedin.com/in/sean-barbieri/">LinkedIn</a></li>
+        <li><a href="https://github.com/seantiny">GitHub</a></li>
+      </ul>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <span>© <span data-year></span> Sean Barbieri</span>
+    <span>Designed &amp; built for the field, not the résumé pile</span>
+  </div>
+</footer>
+
+<script src="../js/main.js"></script>
+<script src="../js/lightbox.js"></script>
+</body>
+</html>

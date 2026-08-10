@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>D.U.C.K. IoT Study System — Sean Barbieri</title>
+<meta name="description" content="A 3-device anti-procrastination system built with ESP32 microcontrollers and ESP-NOW, combining sensor integration, embedded programming, and mechanical design.">
+<link rel="icon" type="image/png" href="../il_fullxfull.7788448561_krkg-removebg-preview.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600&family=Inter:wght@400;500&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../css/base.css">
+<link rel="stylesheet" href="../css/components.css">
+<link rel="stylesheet" href="../css/project-detail.css">
+</head>
+<body>
+
+<nav class="site-nav" aria-label="Primary">
+  <a href="../index.html" class="nav-mark">Sean.</a>
+  <button class="nav-toggle" aria-label="Toggle menu" aria-expanded="false"><span></span></button>
+  <ul class="nav-links">
+    <li><a href="../index.html">Home</a></li>
+    <li><a href="../projects.html" aria-current="page">Projects</a></li>
+    <li><a href="../industry.html">Industry</a></li>
+    <li><a href="../about.html">About</a></li>
+    <li><a href="../contact.html">Contact</a></li>
+  </ul>
+</nav>
+
+<header class="proj-hero">
+  <div class="media-frame" style="--ratio:16/9;">
+    <img src="../images/projects/duck/Duck.png" alt="D.U.C.K. anti-procrastination IoT system, Buck, Puck, and Monitor">
+    <div class="frame-fallback"><div class="crosshair"></div><span class="frame-label">FIG.00 / duck / hero</span><span class="frame-coord">2025</span></div>
+  </div>
+  <div class="item-overlay"></div>
+  <div class="proj-hero-body">
+    <span class="eyebrow">ME100 — Independent Project</span>
+    <h1>D.U.C.K. IoT Study System</h1>
+  </div>
+</header>
+
+<section class="proj-meta-bar">
+  <div class="meta-block"><span class="eyebrow">Organization</span><p>ME100</p></div>
+  <div class="meta-block"><span class="eyebrow">Role</span><p>Designer &amp; Engineer</p></div>
+  <div class="meta-block"><span class="eyebrow">Timeline</span><p>2025</p></div>
+  <div class="meta-block"><span class="eyebrow">Software</span><p>MicroPython, Fusion 360, ESP-NOW</p></div>
+  <div class="meta-block"><span class="eyebrow">Skills</span><p>Sensor Integration, Embedded Programming, Mechanical Design, Wireless Communication</p></div>
+</section>
+
+<section class="proj-section">
+  <div class="proj-section-head">
+    <span class="proj-section-num">01</span>
+    <h2>Overview</h2>
+  </div>
+  <div class="proj-section-body">
+    <p>Developed a 3-device anti-procrastination system using ESP32 microcontrollers and ESP-NOW to actively monitor user presence and phone use during timed work sessions. The system was designed to operate without WiFi, allowing Buck, Puck, and Monitor to communicate across different rooms while providing real-time alerts to a third-party accountability partner. Combined sensor integration, embedded programming, mechanical design, and wireless communication into a single working system.</p>
+        <div class="proj-video">
+      <iframe width="560" height="315" style="--video-ratio:21/9;" src="https://www.youtube.com/embed/8V55S-mOoqE?si=Ap0H7AHzRB4nfJvE" title="D.U.C.K Project" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+    </div>
+  </div>
+</section>
+
+<section class="proj-section">
+  <div class="proj-section-head">
+    <span class="proj-section-num">02</span>
+    <h2>Components &amp; Sensing</h2>
+  </div>
+  <div class="proj-section-body">
+    <p>Selected and integrated 3 sensors and 3 actuators across the system based on their sensing range, reliability, and intended use. Used a mmWave sensor for human presence detection, a 1 kg load cell with an HX711 amplifier for phone detection, and a push button for controlling system states. Used LEDs and a piezoelectric buzzer for visual and auditory alerts, along with an FS90 microservo to provide a visual countdown timer.</p>
+    <h3>mmWave Sensor</h3>
+    <p>Used for human presence detection at the user's desk. Unlike an ultrasonic sensor, the mmWave sensor can distinguish between living and non-living objects and detect presence without requiring a direct unobstructed path.</p>
+    <h3>Load Cell</h3>
+    <p>Used to detect whether the user's phone is present on Puck. Paired with an HX711 amplifier to convert the load cell's strain measurement into readable weight data, with a custom threshold used to identify when the phone is removed.</p>
+    <h3>Button</h3>
+    <p>Used to start, pause, and resume work sessions. Sends state changes to the Monitor through ESP-NOW and triggers the servo and mmWave sensing sequence.</p>
+  </div>
+</section>
+
+<section class="proj-section">
+  <div class="proj-section-head">
+    <span class="proj-section-num">03</span>
+    <h2>Design &amp; Engineering</h2>
+  </div>
+  <div class="proj-section-body">
+    <p>Designed custom CAD housings for each of the three devices around their respective electronics and sensing components, then developed the embedded software in MicroPython to control each device's sensors, actuators, and ESP-NOW communication — allowing Buck to sit near the user, Puck to sit in another room, and the Monitor to be carried by a third party, all without relying on WiFi.</p>
+    <h3>Buck</h3>
+    <p>Houses the mmWave sensor, servo motor, and push button in a custom duck enclosure. The servo sweeps 180° to give a visual countdown of the work session while the mmWave sensor monitors user presence. On the firmware side, Buck processes raw mmWave data through UART, filtering motion and static target readings by distance and signal energy, drives the servo sweep during a timed session, sends presence data to the Monitor over ESP-NOW, and implements pause, resume, and inactivity states with timeout logic to prevent the system from staying active indefinitely.</p>
+    <h3>Puck</h3>
+    <p>Built around the load cell and HX711 amplifier as a dedicated platform for detecting phone presence, with the load cell positioned to measure the phone's weight while the remaining electronics are packaged underneath. On the firmware side, Puck reads and calibrates load cell measurements through the HX711, averages the readings, applies a weight threshold to determine phone presence, and continuously sends weight data to the Monitor over ESP-NOW so the system can detect when the phone is removed.</p>
+    <h3>Monitor</h3>
+    <p>A handheld enclosure housing the LEDs and piezoelectric buzzer used to notify the third-party accountability partner, sized to be carried while receiving alerts from the other two devices. On the firmware side, the Monitor acts as the central receiver for Buck and Puck and runs the overall system state machine — processing incoming weight and presence data, triggering buzzer patterns and LEDs based on the detected event, and managing active, paused, inactive, and completed session states.</p>
+    <div class="proj-media-split">
+      <figure data-lightbox>
+        <div class="media-frame" style="background: var(--paper);" style="object-fit: contain;">
+          <img src="../images/projects/duck/bbuck.png" alt="CAD housing for Buck">
+          <div class="frame-fallback"><div class="crosshair"></div><span class="frame-label">FIG.01</span><span class="frame-coord">03.A</span></div>
+        </div>
+      </figure>
+      <figure data-lightbox>
+        <div class="media-frame" style="background: var(--paper);">
+          <img src="../images/projects/duck/ppuck.png" alt="CAD housing for Puck">
+          <div class="frame-fallback"><div class="crosshair"></div><span class="frame-label">FIG.02</span><span class="frame-coord">03.B</span></div>
+        </div>
+      </figure>
+    </div>
+  </div>
+</section>
+
+<section class="proj-section">
+  <div class="proj-section-head">
+    <span class="proj-section-num">04</span>
+    <h2>Images</h2>
+  </div>
+  <div class="proj-section-body">
+    <div class="image-mosaic">
+      <figure data-lightbox>
+        <div class="media-frame"style="background: var(--paper);">
+          <img src="../images/projects/duck/_DSF019229.JPG" alt="Buck device housing the mmWave sensor and servo">
+          <div class="frame-fallback"><div class="crosshair"></div><span class="frame-label">FIG.03</span><span class="frame-coord">04.A</span></div>
+        </div>
+      </figure>
+      <figure data-lightbox>
+        <div class="media-frame"style="background: var(--paper);">
+          <img src="../images/projects/duck/_DSF0189adawda.JPG" alt="Puck device with load cell platform">
+          <div class="frame-fallback"><div class="crosshair"></div><span class="frame-label">FIG.04</span><span class="frame-coord">04.B</span></div>
+        </div>
+      </figure>
+      <figure data-lightbox>
+        <div class="media-frame"style="background: var(--paper);">
+          <img src="../images/projects/duck/buck.png" alt="Monitor handheld device with LEDs and buzzer">
+          <div class="frame-fallback"><div class="crosshair"></div><span class="frame-label">FIG.05</span><span class="frame-coord">04.C</span></div>
+        </div>
+      </figure>
+      <figure data-lightbox>
+        <div class="media-frame"style="background: var(--paper);">
+          <img src="../images/projects/duck/puck.png" alt="ESP-NOW communication diagram across the three devices">
+          <div class="frame-fallback"><div class="crosshair"></div><span class="frame-label">FIG.06</span><span class="frame-coord">04.D</span></div>
+        </div>
+      </figure>
+      <figure data-lightbox>
+        <div class="media-frame"style="background: var(--paper);">
+          <img src="../images/projects/duck/monitor.png" alt="mmWave sensor and servo sweep mechanism">
+          <div class="frame-fallback"><div class="crosshair"></div><span class="frame-label">FIG.07</span><span class="frame-coord">04.E</span></div>
+        </div>
+      </figure>
+      <figure data-lightbox >
+        <div class="media-frame" style="background: var(--paper);">
+          <img src="../images/projects/duck/mmon.png" alt="Full D.U.C.K. system in use on a desk">
+          <div class="frame-fallback"><div class="crosshair"></div><span class="frame-label">FIG.08</span><span class="frame-coord">04.F</span></div>
+        </div>
+      </figure>
+    </div>
+  </div>
+</section>
+
+<nav class="proj-nextprev" aria-label="More projects">
+  <a class="np-link prev" href="../industry/morphing.html">
+    <span class="eyebrow">Previous</span>
+    <h3>ReTune</h3>
+  </a>
+  <a class="np-link next" href="180.html">
+    <span class="eyebrow">Next</span>
+    <h3>Engineering Analysis Using the Finite Element Method</h3>
+  </a>
+</nav>
+
+<footer class="site-footer">
+  <div class="footer-grid">
+    <div><p class="footer-title">Let's build something!</p></div>
+    <div>
+      <div class="footer-col-heading">Site</div>
+      <ul class="footer-links">
+        <li><a href="../index.html">Home</a></li>
+        <li><a href="../projects.html">Projects</a></li>
+        <li><a href="../industry.html">Industry</a></li>
+        <li><a href="../about.html">About</a></li>
+      </ul>
+    </div>
+    <div>
+      <div class="footer-col-heading">Contact</div>
+      <ul class="footer-links">
+        <li><a href="../contact.html">Contact form</a></li>
+        <li><a href="mailto:seantiny@berkeley.edu">seantiny@berkeley.edu</a></li>
+        <li><a href="https://www.linkedin.com/in/sean-barbieri/">LinkedIn</a></li>
+        <li><a href="https://github.com/seantiny">GitHub</a></li>
+      </ul>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <span>© <span data-year></span> Sean Barbieri</span>
+    <span>Designed &amp; built for the field, not the résumé pile</span>
+  </div>
+</footer>
+
+<script src="../js/main.js"></script>
+<script src="../js/lightbox.js"></script>
+</body>
+</html>

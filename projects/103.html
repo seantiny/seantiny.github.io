@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Tensile Evaluation of 3D-Printed Filaments at Varying Print Speeds — Sean Barbieri</title>
+<meta name="description" content="A full-factorial study of how print speed affects the tensile properties of PLA, PETG, and ASA, tested per ASTM D638 on an Instron universal testing machine.">
+<link rel="icon" type="image/png" href="../il_fullxfull.7788448561_krkg-removebg-preview.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600&family=Inter:wght@400;500&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../css/base.css">
+<link rel="stylesheet" href="../css/components.css">
+<link rel="stylesheet" href="../css/project-detail.css">
+</head>
+<body>
+
+<nav class="site-nav" aria-label="Primary">
+  <a href="../index.html" class="nav-mark">Sean.</a>
+  <button class="nav-toggle" aria-label="Toggle menu" aria-expanded="false"><span></span></button>
+  <ul class="nav-links">
+    <li><a href="../index.html">Home</a></li>
+    <li><a href="../projects.html" aria-current="page">Projects</a></li>
+    <li><a href="../industry.html">Industry</a></li>
+    <li><a href="../about.html">About</a></li>
+    <li><a href="../contact.html">Contact</a></li>
+  </ul>
+</nav>
+
+<header class="proj-hero">
+  <div class="media-frame" style="--ratio:16/9;">
+    <img src="../images/projects/103/square.jpg" alt="Dog-bone tensile specimens on the Instron testing machine">
+    <div class="frame-fallback"><div class="crosshair"></div><span class="frame-label">FIG.00 / 103 / hero</span><span class="frame-coord">2024</span></div>
+  </div>
+  <div class="item-overlay"></div>
+  <div class="proj-hero-body">
+    <span class="eyebrow">ME103 — Research</span>
+    <h1>Tensile Evaluation of 3D-Printed Filaments</h1>
+  </div>
+</header>
+
+<section class="proj-meta-bar">
+  <div class="meta-block"><span class="eyebrow">Organization</span><p>UC Berkeley — ME103</p></div>
+  <div class="meta-block"><span class="eyebrow">Role</span><p>Researcher</p></div>
+  <div class="meta-block"><span class="eyebrow">Timeline</span><p>2024</p></div>
+  <div class="meta-block"><span class="eyebrow">Software</span><p>Bambu P1S, Instron, Statistical Analysis</p></div>
+  <div class="meta-block"><span class="eyebrow">Skills</span><p>DOE, Tensile Testing, ANOVA, ASTM D638</p></div>
+</section>
+
+<section class="proj-section">
+  <div class="proj-section-head">
+    <span class="proj-section-num">01</span>
+    <h2>Overview</h2>
+  </div>
+  <div class="proj-section-body">
+    <p>We investigated how print speed affects the tensile properties of PLA, PETG, and ASA 3D-printed materials. Using ASTM D638 dog-bone specimens, we tested five internal print speeds from 50 to 800 mm/s and evaluated how material and print speed affected strength and ductility. In total, we fabricated and tested 60 specimens using a Bambu P1S and an Instron universal testing machine.</p>
+     <p>We used a full factorial design with three filament materials and five print speeds, producing 15 unique conditions with four specimens per condition. Print speed was varied while other slicer parameters, including outer wall speed, surface speed, infill density, infill pattern, and layer height, were held constant. Before testing, each specimen was dimensionally measured and the Instron load cell was calibrated using known loads to reduce systematic measurement error.</p>
+  </div>
+  
+</section>
+
+<section class="proj-section">
+  <div class="proj-section-head">
+    <span class="proj-section-num">02</span>
+    <h2>Tensile Testing &amp; Analysis</h2>
+  </div>
+  <div class="proj-section-body">
+    <p>We performed uniaxial tensile testing at a constant crosshead speed of 6 mm/min and recorded force and displacement continuously until fracture. The data was corrected using the load cell calibration and converted into engineering stress and strain. We then compared ultimate tensile strength and ductility across materials and print speeds using stress-strain curves, two-way ANOVA, and statistical hypothesis testing.</p>
+  </div>
+</section>
+
+<section class="proj-section">
+  <div class="proj-section-head">
+    <span class="proj-section-num">03</span>
+    <h2>Results</h2>
+  </div>
+  <div class="proj-section-body">
+    <p>Material had a statistically significant effect on both ultimate tensile strength and ductility, while print speed alone did not show a statistically significant effect. However, the interaction between material and print speed was significant for both properties, indicating that different materials responded differently to changes in print speed. A follow-up analysis found a significant decrease in PLA ductility between 50 and 800 mm/s, while the same trend was not statistically significant for PETG or ASA. Overall, the results showed that print speed cannot be evaluated independently of filament material and that PLA was the most sensitive to changes in printing speed in our testing.</p>
+  </div>
+</section>
+
+<section class="proj-section">
+  <div class="proj-section-head">
+    <span class="proj-section-num">04</span>
+    <h2>Images</h2>
+  </div>
+  <div class="proj-section-body">
+    <div class="image-mosaic">
+      <figure data-lightbox>
+        <div class="media-frame">
+          <img src="../images/projects/103/Screenshot 2026-08-09 162206.png" alt="Stress-strain curves by material">
+          <div class="frame-fallback"><div class="crosshair"></div><span class="frame-label">FIG.04</span><span class="frame-coord">05.A</span></div>
+        </div>
+      </figure>
+      <figure data-lightbox>
+        <div class="media-frame">
+          <img src="../images/projects/103/ASA_Comparison.png" alt="Ultimate tensile strength by print speed and material">
+          <div class="frame-fallback"><div class="crosshair"></div><span class="frame-label">FIG.05</span><span class="frame-coord">05.B</span></div>
+        </div>
+      </figure>
+      <figure data-lightbox>
+        <div class="media-frame">
+          <img src="../images/projects/103/ASA_elongation.png" alt="PLA ductility trend across print speeds">
+          <div class="frame-fallback"><div class="crosshair"></div><span class="frame-label">FIG.06</span><span class="frame-coord">05.C</span></div>
+        </div>
+      </figure>
+      <figure data-lightbox>
+        <div class="media-frame">
+          <img src="../images/projects/103/PETG_Comparison.png" alt="Two-way ANOVA results table">
+          <div class="frame-fallback"><div class="crosshair"></div><span class="frame-label">FIG.07</span><span class="frame-coord">05.D</span></div>
+        </div>
+      </figure>
+      <figure data-lightbox>
+        <div class="media-frame">
+          <img src="../images/projects/103/PLA_Comparison.png" alt="Fractured specimen after tensile test">
+          <div class="frame-fallback"><div class="crosshair"></div><span class="frame-label">FIG.08</span><span class="frame-coord">05.E</span></div>
+        </div>
+      </figure>
+            <figure data-lightbox>
+        <div class="media-frame">
+          <img src="../images/projects/103/PLA_elongation.png" alt="Fractured specimen after tensile test">
+          <div class="frame-fallback"><div class="crosshair"></div><span class="frame-label">FIG.08</span><span class="frame-coord">05.E</span></div>
+        </div>
+      </figure>
+    </div>
+  </div>
+</section>
+
+<nav class="proj-nextprev" aria-label="More projects">
+  <a class="np-link prev" href="127.html">
+    <span class="eyebrow">Previous</span>
+    <h3>Composite Toed Shoe</h3>
+  </a>
+  <a class="np-link next" href="e26.html">
+    <span class="eyebrow">Next</span>
+    <h3>3D Printed Wind Turbine</h3>
+  </a>
+</nav>
+
+<footer class="site-footer">
+  <div class="footer-grid">
+    <div><p class="footer-title">Let's build something!</p></div>
+    <div>
+      <div class="footer-col-heading">Site</div>
+      <ul class="footer-links">
+        <li><a href="../index.html">Home</a></li>
+        <li><a href="../projects.html">Projects</a></li>
+        <li><a href="../industry.html">Industry</a></li>
+        <li><a href="../about.html">About</a></li>
+      </ul>
+    </div>
+    <div>
+      <div class="footer-col-heading">Contact</div>
+      <ul class="footer-links">
+        <li><a href="../contact.html">Contact form</a></li>
+        <li><a href="mailto:seantiny@berkeley.edu">seantiny@berkeley.edu</a></li>
+        <li><a href="https://www.linkedin.com/in/sean-barbieri/">LinkedIn</a></li>
+        <li><a href="https://github.com/seantiny">GitHub</a></li>
+      </ul>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <span>© <span data-year></span> Sean Barbieri</span>
+    <span>Designed &amp; built for the field, not the résumé pile</span>
+  </div>
+</footer>
+
+<script src="../js/main.js"></script>
+<script src="../js/lightbox.js"></script>
+</body>
+</html>

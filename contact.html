@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Contact</title>
+<link rel="icon" type="image/png" href="il_fullxfull.7788448561_krkg-removebg-preview.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600&family=Inter:wght@400;500&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/base.css">
+<link rel="stylesheet" href="css/components.css">
+<style>
+  .contact-wrap { padding: clamp(7rem,12vw,10rem) var(--gutter) clamp(5rem,10vw,8rem); display:grid; grid-template-columns: 0.7fr 1fr; gap: clamp(2rem,6vw,5rem); }
+  .contact-wrap h1 { font-size: var(--step-4); max-width: 12ch; }
+  .contact-wrap p { color: var(--ink-soft); margin-top: 1.2rem; max-width: 36ch; }
+  .contact-direct { margin-top: 2.4rem; display:grid; gap: 0.9rem; font-family: var(--font-mono); font-size: 0.85rem; }
+  .contact-direct a { border-bottom: 1px solid var(--line-strong); padding-bottom: 2px; }
+  .contact-direct a:hover { border-color: var(--ink); }
+  form { display:grid; gap: 1.6rem; }
+  .field { display:grid; gap: 0.5rem; }
+  .field label { font-family: var(--font-mono); font-size: 0.72rem; letter-spacing:0.06em; text-transform:uppercase; color: var(--warm-gray); }
+  .field input, .field textarea {
+    border: none; border-bottom: 1px solid var(--line-strong); background: transparent;
+    font-family: var(--font-body); font-size: 1rem; padding: 0.6rem 0; color: var(--ink); resize: vertical;
+  }
+  .field input:focus, .field textarea:focus { outline: none; border-color: var(--ink); }
+  .form-note { font-family: var(--font-mono); font-size: 0.72rem; color: var(--warm-gray); margin-top: 0.4rem; }
+  .form-status { font-family: var(--font-mono); font-size: 0.8rem; margin-top: 0.4rem; display:none; }
+  .form-status.is-visible { display:block; }
+  @media (max-width: 860px) { .contact-wrap { grid-template-columns: 1fr; } }
+</style>
+</head>
+<body>
+
+<nav class="site-nav" aria-label="Primary">
+  <a href="index.html" class="nav-mark">Sean.</a>
+  <button class="nav-toggle" aria-label="Toggle menu" aria-expanded="false"><span></span></button>
+  <ul class="nav-links">
+    <li><a href="index.html">Home</a></li>
+    <li><a href="projects.html">Projects</a></li>
+    <li><a href="industry.html">Industry</a></li>
+    <li><a href="about.html">About</a></li>
+    <li><a href="contact.html" aria-current="page">Contact</a></li>
+  </ul>
+</nav>
+
+<section class="contact-wrap">
+  <div class="reveal">
+    <span class="eyebrow">Contact</span>
+    <h1>Say hello.</h1>
+    <p>Open to roles in structural design, stress analysis, and product development.</p>
+    <div class="contact-direct">
+      <a href="mailto:seantiny@berkeley.edu">seantiny@berkeley.edu</a>
+      <a href="https://www.linkedin.com/in/sean-barbieri/">linkedin.com/in/sean-barbieri</a>
+    </div>
+  </div>
+
+  <div class="reveal reveal-delay-1">
+    <form id="contact-form" novalidate>
+      <div class="field">
+        <label for="name">Name</label>
+        <input type="text" id="name" name="name" required autocomplete="name">
+      </div>
+      <div class="field">
+        <label for="email">Email</label>
+        <input type="email" id="email" name="email" required autocomplete="email">
+      </div>
+      <div class="field">
+        <label for="message">Message</label>
+        <textarea id="message" name="message" rows="5" required></textarea>
+      </div>
+      <div>
+        <button type="submit" class="btn">Send message <span class="btn-arrow" aria-hidden="true">&rarr;</span></button>
+        <p class="form-status" id="form-status" role="status"></p>
+      </div>
+    </form>
+  </div>
+</section>
+
+<footer class="site-footer">
+  <div class="footer-grid">
+    <div>
+      <p class="footer-title">Let's build something!</p>
+    </div>
+    <div>
+      <div class="footer-col-heading">Site</div>
+      <ul class="footer-links">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="projects.html">Projects</a></li>
+        <li><a href="industry.html">Industry</a></li>
+        <li><a href="about.html">About</a></li>
+      </ul>
+    </div>
+    <div>
+      <div class="footer-col-heading">Contact</div>
+      <ul class="footer-links">
+        <li><a href="contact.html">Contact form</a></li>
+        <li><a href="mailto:seantiny@berkeley.edu">seantiny@berkeley.edu</a></li>
+        <li><a href="https://www.linkedin.com/in/sean-barbieri/">LinkedIn</a></li>
+        <li><a href="https://github.com/seantiny">GitHub</a></li>
+      </ul>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <span>© <span data-year>
+    <span>Meow</span>
+  </div>
+</footer>
+
+<script src="js/main.js"></script>
+<script>
+  // Static-site friendly submit: builds a mailto with the form contents.
+  // Replace with a real form backend (Formspree, Netlify Forms, etc.) for
+  // a submission that doesn't rely on the visitor's email client.
+  document.getElementById("contact-form").addEventListener("submit", function (e) {
+    e.preventDefault();
+    const name = document.getElementById("name").value.trim();
+    const email = document.getElementById("email").value.trim();
+    const message = document.getElementById("message").value.trim();
+    const status = document.getElementById("form-status");
+    if (!name || !email || !message) {
+      status.textContent = "Please fill in every field.";
+      status.classList.add("is-visible");
+      return;
+    }
+    const subject = encodeURIComponent(`Portfolio contact from ${name}`);
+    const body = encodeURIComponent(`${message}\n\n— ${name} (${email})`);
+    window.location.href = `mailto:seantiny@berkeley.edu?subject=${subject}&body=${body}`;
+    status.textContent = "Opening your email client…";
+    status.classList.add("is-visible");
+  });
+</script>
+</body>
+</html>

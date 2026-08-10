@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Composite Toed Shoe — Sean Barbieri</title>
+<meta name="description" content="A lightweight composite alternative to steel-toe footwear, developed and evaluated with 3D-printed sandwich structures and finite element analysis under ASTM F2413-18.">
+<link rel="icon" type="image/png" href="../il_fullxfull.7788448561_krkg-removebg-preview.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600&family=Inter:wght@400;500&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../css/base.css">
+<link rel="stylesheet" href="../css/components.css">
+<link rel="stylesheet" href="../css/project-detail.css">
+</head>
+<body>
+
+<nav class="site-nav" aria-label="Primary">
+  <a href="../index.html" class="nav-mark">Sean.</a>
+  <button class="nav-toggle" aria-label="Toggle menu" aria-expanded="false"><span></span></button>
+  <ul class="nav-links">
+    <li><a href="../index.html">Home</a></li>
+    <li><a href="../projects.html" aria-current="page">Projects</a></li>
+    <li><a href="../industry.html">Industry</a></li>
+    <li><a href="../about.html">About</a></li>
+    <li><a href="../contact.html">Contact</a></li>
+  </ul>
+</nav>
+
+<header class="proj-hero">
+  <div class="media-frame" style="--ratio:16/9;">
+    <img src="../images/projects/127/D3 Equivalent Strain.png" alt="Composite toed shoe toe cap on a testing fixture">
+    <div class="frame-fallback"><div class="crosshair"></div><span class="frame-label">FIG.00 / 127 / hero</span><span class="frame-coord">2024</span></div>
+  </div>
+  <div class="item-overlay"></div>
+  <div class="proj-hero-body">
+    <span class="eyebrow">ME127 — Composites</span>
+    <h1>Composite Toed Shoe</h1>
+  </div>
+</header>
+
+<section class="proj-meta-bar">
+  <div class="meta-block"><span class="eyebrow">Organization</span><p>UC Berkeley — ME127</p></div>
+  <div class="meta-block"><span class="eyebrow">Role</span><p>Team Member</p></div>
+  <div class="meta-block"><span class="eyebrow">Timeline</span><p>2024</p></div>
+  <div class="meta-block"><span class="eyebrow">Software</span><p>ANSYS Mechanical, ANSYS ACP, CAD</p></div>
+  <div class="meta-block"><span class="eyebrow">Skills</span><p>FEA, Composite Layup Design, Materials Selection</p></div>
+</section>
+
+<section class="proj-section">
+  <div class="proj-section-head">
+    <span class="proj-section-num">01</span>
+    <h2>Overview</h2>
+  </div>
+  <div class="proj-section-body">
+    <p>Designed and evaluated a lightweight composite alternative to traditional steel-toe footwear using 3D-printed materials and sandwich structures. The goal was to reduce weight while maintaining the structural performance required to withstand a 2,500 lbf compressive load under ASTM F2413-18. We developed and compared multiple material and geometric configurations using CAD and finite element analysis to understand how material selection and internal structure affected strength, deformation, and weight.</p>
+  </div>
+</section>
+
+<section class="proj-section">
+  <div class="proj-section-head">
+    <span class="proj-section-num">02</span>
+    <h2>Design Choices &amp; Layup</h2>
+  </div>
+  <div class="proj-section-body">
+    <p>We designed three internal core geometries: solid, honeycomb, and corrugated, along with a square lattice design. These geometries were selected to investigate how internal structure could reduce material usage while maintaining stiffness and load distribution. For the 3D-printed designs, we used PA-CF as the primary structural core with either TPU 95A or TPE as the outer layers. TPU 95A was selected for its ductility and ability to absorb impact, while PA-CF provided higher stiffness and strength for the load-bearing structure. We also modeled traditional carbon fiber and aluminum honeycomb sandwich layups as a baseline for comparison.</p>
+    <p>The composite layups were evaluated with different fiber orientations and core thicknesses to understand their effect on structural performance. For the traditional composite designs, we used ANSYS ACP to define carbon fiber ply orientations around an aluminum honeycomb core and compared different laminate configurations and thicknesses.</p>
+    <div class="proj-media-split">
+      <figure data-lightbox>
+        <div class="media-frame" style="--ratio:4/3;">
+          <img src="../images/projects/127/Honeycomb Core.png" alt="Core geometry comparison: solid, honeycomb, corrugated, lattice">
+          <div class="frame-fallback"><div class="crosshair"></div><span class="frame-label">FIG.01</span><span class="frame-coord">02.A</span></div>
+        </div>
+        <figcaption class="media-caption">Honeycomb core configuration</figcaption>
+      </figure>
+      <figure data-lightbox>
+        <div class="media-frame" style="--ratio:4/3;">
+          <img src="../images/projects/127/CorrugatedCore.png" alt="Carbon fiber ply orientation defined in ANSYS ACP">
+          <div class="frame-fallback"><div class="crosshair"></div><span class="frame-label">FIG.02</span><span class="frame-coord">02.B</span></div>
+        </div>
+        <figcaption class="media-caption">Corrugated core configuration</figcaption>
+      </figure>
+    </div>
+  </div>
+</section>
+
+<section class="proj-section">
+  <div class="proj-section-head">
+    <span class="proj-section-num">03</span>
+    <h2>Simulation Setup</h2>
+  </div>
+  <div class="proj-section-body">
+    <p>We used ANSYS Mechanical to perform static structural FEA on each design. The simulations were based on the ASTM F2413-18 compression requirement, applying a 2,500 lbf load uniformly across the top surface of the toe cap while constraining the bottom surface to represent contact with the ground. For the composite layups, ANSYS ACP was used to define material orientations, ply stacking, and the aluminum honeycomb core.</p>
+    <p>We compared each design using total factor of safety, internal factor of safety, and maximum deformation. After identifying the strongest 3D-printed configuration, we also tested the design under angled loading conditions at 20°, 45°, and 70° to investigate how the toe cap performed under more realistic impact scenarios.</p>
+    <div class="proj-media-split">
+      <figure data-lightbox>
+        <div class="media-frame" style="--ratio:4/3;">
+          <img src="../images/projects/127/ME 127 Fixed Support.png" alt="Core geometry comparison: solid, honeycomb, corrugated, lattice">
+          <div class="frame-fallback"><div class="crosshair"></div><span class="frame-label">FIG.01</span><span class="frame-coord">02.A</span></div>
+        </div>
+        <figcaption class="media-caption">Fixed Support Boundary Conditions</figcaption>
+      </figure>
+      <figure data-lightbox>
+        <div class="media-frame" style="--ratio:4/3;">
+          <img src="../images/projects/127/ME127Force.png" alt="Carbon fiber ply orientation defined in ANSYS ACP">
+          <div class="frame-fallback"><div class="crosshair"></div><span class="frame-label">FIG.02</span><span class="frame-coord">02.B</span></div>
+        </div>
+        <figcaption class="media-caption">Force Condition</figcaption>
+      </figure>
+    </div>
+  </div>
+</section>
+
+<section class="proj-section">
+  <div class="proj-section-head">
+    <span class="proj-section-num">04</span>
+    <h2>Results</h2>
+  </div>
+  <div class="proj-section-body">
+    <p>The TPU 95A and PA-CF configurations consistently outperformed the TPE-based designs in internal factor of safety. The corrugated TPU 95A-PA-CF-TPU 95A configuration achieved the highest internal factor of safety among the 3D-printed designs at 4.39, while the traditional composite layups provided the strongest overall structural performance. The selected corrugated design also maintained an internal factor of safety between 2.5 and 7.92 across the angled loading cases.</p>
+    <p>Beyond structural performance, the D3 design reduced mass from approximately 871 g for the equivalent steel design to 133 g, while reducing material cost from approximately $64.80 to $6.47. Although the 3D-printed designs did not match the overall factor of safety of the traditional composite layups, the results demonstrated the potential of combining ductile outer materials with a stiff PA-CF core to create significantly lighter protective structures.</p>
+  </div>
+</section>
+
+<section class="proj-section">
+  <div class="proj-section-head">
+    <span class="proj-section-num">05</span>
+    <h2>Images</h2>
+  </div>
+  <div class="proj-section-body">
+    <div class="image-mosaic">
+      <figure data-lightbox>
+        <div class="media-frame">
+          <img src="../images/projects/127/A2 Deformation.png" alt="D3 equivalent strain result">
+          <div class="frame-fallback"><div class="crosshair"></div><span class="frame-label">FIG.04</span><span class="frame-coord">05.A</span></div>
+        </div>
+      </figure>
+            <figure data-lightbox>
+        <div class="media-frame">
+          <img src="../images/projects/127/D3 Deformation Animation.png" alt="Angled loading test at 45 degrees">
+          <div class="frame-fallback"><div class="crosshair"></div><span class="frame-label">FIG.06</span><span class="frame-coord">05.C</span></div>
+        </div>
+      </figure>
+      <figure data-lightbox>
+        <div class="media-frame">
+          <img src="../images/projects/127/B1 Deformation.png" alt="Corrugated core deformation result">
+          <div class="frame-fallback"><div class="crosshair"></div><span class="frame-label">FIG.05</span><span class="frame-coord">05.B</span></div>
+        </div>
+      </figure>
+      <figure data-lightbox>
+        <div class="media-frame">
+          <img src="../images/projects/127/D3 Equivalent Stress fixed.png" alt="Printed toe cap prototype">
+          <div class="frame-fallback"><div class="crosshair"></div><span class="frame-label">FIG.07</span><span class="frame-coord">05.D</span></div>
+        </div>
+      </figure>
+      <figure data-lightbox>
+        <div class="media-frame">
+          <img src="../images/projects/127/D3 Equivalent Strain.png" alt="Factor of safety comparison chart across designs">
+          <div class="frame-fallback"><div class="crosshair"></div><span class="frame-label">FIG.08</span><span class="frame-coord">05.E</span></div>
+        </div>
+      </figure>
+    </div>
+  </div>
+</section>
+
+<nav class="proj-nextprev" aria-label="More projects">
+  <a class="np-link prev" href="ME178.html">
+    <span class="eyebrow">Previous</span>
+    <h3>Flight Cost Analysis using ML</h3>
+  </a>
+  <a class="np-link next" href="103.html">
+    <span class="eyebrow">Next</span>
+    <h3>Tensile Evaluation of 3D-Printed Filaments</h3>
+  </a>
+</nav>
+
+<footer class="site-footer">
+  <div class="footer-grid">
+    <div><p class="footer-title">Let's build something!</p></div>
+    <div>
+      <div class="footer-col-heading">Site</div>
+      <ul class="footer-links">
+        <li><a href="../index.html">Home</a></li>
+        <li><a href="../projects.html">Projects</a></li>
+        <li><a href="../industry.html">Industry</a></li>
+        <li><a href="../about.html">About</a></li>
+      </ul>
+    </div>
+    <div>
+      <div class="footer-col-heading">Contact</div>
+      <ul class="footer-links">
+        <li><a href="../contact.html">Contact form</a></li>
+        <li><a href="mailto:seantiny@berkeley.edu">seantiny@berkeley.edu</a></li>
+        <li><a href="https://www.linkedin.com/in/sean-barbieri/">LinkedIn</a></li>
+        <li><a href="https://github.com/seantiny">GitHub</a></li>
+      </ul>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <span>© <span data-year></span> Sean Barbieri</span>
+    <span>Designed &amp; built for the field, not the résumé pile</span>
+  </div>
+</footer>
+
+<script src="../js/main.js"></script>
+<script src="../js/lightbox.js"></script>
+</body>
+</html>

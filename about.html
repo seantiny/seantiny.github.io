@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>About</title>
+<link rel="icon" type="image/png" href="il_fullxfull.7788448561_krkg-removebg-preview.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600&family=Inter:wght@400;500&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/base.css">
+<link rel="stylesheet" href="css/components.css">
+<link rel="stylesheet" href="css/project-detail.css">
+<style>
+  .about-hero { padding: clamp(7rem,12vw,10rem) var(--gutter) 3rem; display:grid; grid-template-columns: 1fr 1fr; gap: clamp(2rem,6vw,5rem); align-items:end; }
+  .about-hero h1 { font-size: var(--step-4); max-width: 14ch; }
+  .about-portrait { --ratio: 4/3; max-width: 520px; margin-left: auto; }
+  .about-portrait img {
+    object-fit: cover;
+    object-position: center 80%;
+  }
+.about-body {
+    padding: 2rem var(--gutter) 3rem;
+    display: grid;
+    grid-template-columns: 0.55fr 1fr;
+    gap: 2rem;
+    border-top: 1px solid var(--line);
+}
+  .about-body p + p { margin-top: 1.1rem; }
+  .about-body p { color: var(--ink-soft); max-width: 62ch; }
+  .skills-grid { padding: clamp(3rem,6vw,4.5rem) var(--gutter) clamp(4rem,8vw,7rem); display:grid; grid-template-columns: repeat(4,1fr); gap: 1px; background: var(--line); border-top: 1px solid var(--line); border-bottom: 1px solid var(--line); }
+  .skill-card { background: var(--paper); padding: 2rem; }
+  .skill-card h3 { font-size: var(--step-1); margin-bottom: 0.8rem; }
+  .skill-card ul { margin:0; padding-left: 1.1rem; color: var(--ink-soft); font-size: 0.92rem; }
+  .skill-card li + li { margin-top: 0.4rem; }
+  @media (max-width: 860px) {
+    .about-hero, .about-body { grid-template-columns: 1fr; }
+    .skills-grid { grid-template-columns: 1fr 1fr; }
+    .about-portrait { margin: 0 auto; }
+  }
+</style>
+</head>
+<body>
+
+<nav class="site-nav" aria-label="Primary">
+  <a href="index.html" class="nav-mark">Sean.</a>
+  <button class="nav-toggle" aria-label="Toggle menu" aria-expanded="false"><span></span></button>
+  <ul class="nav-links">
+    <li><a href="index.html">Home</a></li>
+    <li><a href="projects.html">Projects</a></li>
+    <li><a href="industry.html">Industry</a></li>
+    <li><a href="about.html" aria-current="page">About</a></li>
+    <li><a href="contact.html">Contact</a></li>
+  </ul>
+</nav>
+
+<section class="about-hero">
+  <div class="reveal">
+    <span class="eyebrow">About Me</span>
+    <h1>Mechanical Engineer</h1>
+  </div>
+  <div class="media-frame about-portrait reveal reveal-delay-1">
+    <img src="images/profile/image2.jpg">
+    <div class="frame-fallback"><div class="crosshair"></div><span class="frame-label">portrait</span><span class="frame-coord">01</span></div>
+  </div>
+</section>
+
+<section class="about-body">
+  <div class="proj-section-head reveal">
+    <span class="proj-section-num">01</span>
+    <h2 style="font-size:var(--step-3); margin-top:0.8rem;">Background</h2>
+  </div>
+  <div class="reveal">
+<p>I'm a fourth-year Mechanical Engineering student at UC Berkeley interested in design, structural analysis, and the process of turning ideas into physical products.</p>
+
+<p>I've worked on the factory floor at Boeing, in a magnetics research lab at Enphase Energy, developed apps at HammerSpace and on the structural design team for CalSol's solar race car. Those experiences have exposed me to very different engineering environments, from large-scale manufacturing to research labs to student-led design teams.</p>
+
+<p>The common thread throughout my work is building things that continue to be useful long after I'm gone. Whether it's designing hardware, developing internal tools, or improving engineering workflows, I enjoy creating work that people rely on, iterate on, and improve through real-world feedback rather than leaving behind one-off projects.</p>
+  </div>
+</section>
+
+<section class="skills-grid">
+  <div class="skill-card reveal">
+    <h3>Design &amp; CAD</h3>
+    <ul><li>SolidWorks &amp; Fusion 360</li><li>CATIA V5</li><li>DFM</li><li>Sheet metal &amp; composites</li></ul>
+  </div>
+  <div class="skill-card reveal reveal-delay-1">
+    <h3>Analysis</h3>
+    <ul><li>Ansys FEA</li><li>FEM</li><li>Nastran</li><li>Abaqus</li></ul>
+  </div>
+  <div class="skill-card reveal reveal-delay-2">
+    <h3>Manufacturing</h3>
+    <ul><li>Composite layup</li><li>Additive Manufacturing</li><li>Fixture &amp; jig design</li></ul>
+  </div>
+  <div class="skill-card reveal reveal-delay-3">
+    <h3>Software</h3>
+    <ul><li>Python</li><li>SQL</li><li>MATLAB</li><li>Pandas</li></ul>
+  </div>
+</section>
+
+<footer class="site-footer">
+  <div class="footer-grid">
+    <div>
+      <p class="footer-title">Let's build something!</p>
+    </div>
+    <div>
+      <div class="footer-col-heading">Site</div>
+      <ul class="footer-links">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="projects.html">Projects</a></li>
+        <li><a href="industry.html">Industry</a></li>
+        <li><a href="about.html">About</a></li>
+      </ul>
+    </div>
+    <div>
+      <div class="footer-col-heading">Contact</div>
+      <ul class="footer-links">
+        <li><a href="contact.html">Contact form</a></li>
+        <li><a href="mailto:seantiny@berkeley.edu">seantiny@berkeley.edu</a></li>
+        <li><a href="https://www.linkedin.com/in/sean-barbieri/">LinkedIn</a></li>
+        <li><a href="https://github.com/seantiny">GitHub</a></li>
+      </ul>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <span>© <span data-year>
+    <span>Meow</span>
+  </div>
+</footer>
+
+<script src="js/main.js"></script>
+</body>
+</html>
